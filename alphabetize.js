@@ -28,31 +28,29 @@ function sortNamesList(namesList, options){
 }
 
 function merge(left, right, options){
-    var result  = [],
-        il      = 0,
-        ir      = 0;
-
-    while (il < left.length && ir < right.length){
-        if (sortName(left[il], options.nameUsed) < sortName(right[ir], options.nameUsed)){
-            result.push(options.reversed ? right[ir++] : left[il++]);
-            
-        } else {
-            result.push(options.reversed ? left[il++] : right[ir++]);
-        }
+  var result  = [],
+    il      = 0,
+    ir      = 0;
+ 
+  while (il < left.length && ir < right.length){
+    if (sortName(left[il], options.nameUsed) < sortName(right[ir], options.nameUsed)){
+      result.push(options.reversed ? right[ir++] : left[il++]);  
+    } else {
+      result.push(options.reversed ? left[il++] : right[ir++]);
     }
+  }
 
-    return result.concat(left.slice(il)).concat(right.slice(ir));
+  return result.concat(left.slice(il)).concat(right.slice(ir));
 }
 
 function mergeSort(items, options){
+  if (items.length < 2) {
+    return items;
+  }
 
-    if (items.length < 2) {
-        return items;
-    }
+  var middle = Math.floor(items.length / 2),
+      left    = items.slice(0, middle),
+      right   = items.slice(middle);
 
-    var middle = Math.floor(items.length / 2),
-        left    = items.slice(0, middle),
-        right   = items.slice(middle);
-
-    return merge(mergeSort(left, options), mergeSort(right, options), options);
+  return merge(mergeSort(left, options), mergeSort(right, options), options);
 }
