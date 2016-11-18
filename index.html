@@ -2,17 +2,30 @@
 <html>
 <head>
   <script type="text/javascript" src="alphabetize.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <title></title>
 </head>
 <body>
 
-  <h1>The Alphabetizer</h1>
-  <div id="options">
-    <label>Sort Z-A</label><input type="checkbox" name="reverse"><br>
-    <label>Sort By Last Name</label> <input type="checkbox" name="nameUsed">
-  </div>
 
-  <textarea rows="50" cols="20"></textarea>
+<div class="row">
+  <div class="col-1">
+    <h1>The Alphabetizer</h1>
+    <form>
+      <div id="options">
+        <label>Sort Z-A</label><input type="checkbox" name="reverse">
+        <label>Sort By Last Name</label> <input type="checkbox" name="nameUsed">
+      </div>
+  </div>
+  
+      <div class="col-2">
+        <textarea rows="30" cols="20"></textarea><br>
+        <input type="submit" value="Sort Names" id="submit">
+    </form>
+  </div>
+</div>
+
+
 
 </body>
 </html>

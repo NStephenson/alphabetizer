@@ -1,0 +1,33 @@
+h1 {
+  color: #F4F4F9;
+}
+
+* {
+  background-color: #586F7C;
+}
+
+.col-1 {
+  width: 40%;
+  float: left;
+  position: absolute;
+  top: 40%;
+  left: 12%;
+}
+
+.col-2{
+  width: 59%;
+  float: left;
+  position: absolute;
+  top: 20%;
+  left: 57%;
+}
+
+textarea {
+  background: #6D6D6D;
+}
+
+#submit {
+  background: #6D6D6D;
+  position: absolute;
+  left: 7%;
+}
